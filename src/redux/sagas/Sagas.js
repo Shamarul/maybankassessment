@@ -30,14 +30,12 @@ function* logout() {
 }
 
 function* runUpdateMap(params) {
-    console.log('runUpdateMap', params.placeId);
     let props = {};
     let dataBody = {};
     const placeId = yield select(selectors.placeId);
 
     try {
         if(placeId !== params.placeId && params.placeId){
-            console.log('TEST', placeId, params.placeId);
             yield put({type: UPDATE_PLACEID, placeId: params.placeId});
             props = {};
             dataBody = {};
@@ -46,7 +44,6 @@ function* runUpdateMap(params) {
             const [response] = yield all([
                 call(Services, 'GET', _getPlaceDetail, props, dataBody),
             ])
-            console.log('response', response);
             yield put({type: UPDATE_PLACEDETAIL, placeDetail: response.result, lat: response?.result?.geometry?.location?.lat, lng: response?.result?.geometry?.location?.lng});
         }
     } catch(err) {

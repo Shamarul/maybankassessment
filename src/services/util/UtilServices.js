@@ -21,7 +21,6 @@ export async function _getAutoComplete(body, props) {
     params: googleApiKey[String], placeId[String]
 */
 export async function _getPlaceDetail(body, props) {
-    console.log([Api.GOOGLE_MAP, 'details', 'json?key='+props.googleApiKey+'&place_id='+props.placeId, ].join('/'));
     let request = await fetch([Api.GOOGLE_MAP, 'details', 'json?key='+props.googleApiKey+'&place_id='+props.placeId, ].join('/'), body);
     let responseJSON;
     try {

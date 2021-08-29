@@ -14,8 +14,6 @@ function App() {
   const lat =  useSelector((state) => state.util.lat);
   const lng =  useSelector((state) => state.util.lng);
 
-  console.log(lat, lng);
-
   const dispatchInitialising = () => {
     dispatch({type: INITIALISING});
   }
@@ -37,7 +35,6 @@ function App() {
   }, []);
 
   const searchOnChange = (e) => {
-    console.log(e.target.value);
     dispatchRunAutoComplete(e.target.value);
   }
 

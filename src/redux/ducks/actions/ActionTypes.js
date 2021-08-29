@@ -1,0 +1,9 @@
+/*---- Sagas -----*/
+export const INITIALISING = 'INITIALISING';
+export const RUN_AUTOCOMPLETE = 'RUN_AUTOCOMPLETE'
+export const RUN_UPDATEMAP = 'RUN_UPDATEMAP';
+
+/*---- UtilReducer ----*/
+export const UPDATE_AUTOCOMPLETE = 'UPDATE_AUTOCOMPLETE';
+export const UPDATE_PLACEID = 'UPDATE_PLACEID';
+export const UPDATE_PLACEDETAIL = 'UPDATE_PLACEDETAIL';
